@@ -583,6 +583,12 @@
       </div>
     </section>
 
+    <!-- Modal for Image Preview -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
     <script>
       function openModal(imgElement) {
         var modal = document.getElementById("imageModal");
