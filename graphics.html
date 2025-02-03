@@ -583,20 +583,27 @@
       </div>
     </section>
 
-    <!-- Modal for Image Preview -->
-    <div id="imageModal" class="modal">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage" />
-    </div>
-
     <script>
-      function openModal(image) {
-        document.getElementById("modalImage").src = image.src;
-        document.getElementById("imageModal").style.display = "flex";
+      function openModal(imgElement) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var body = document.body;
+
+        modal.style.display = "flex";
+        modalImg.src = imgElement.src;
+
+        // Add class to hide navbar
+        body.classList.add("modal-open");
       }
 
       function closeModal() {
-        document.getElementById("imageModal").style.display = "none";
+        var modal = document.getElementById("imageModal");
+        var body = document.body;
+
+        modal.style.display = "none";
+
+        // Remove class to show navbar again
+        body.classList.remove("modal-open");
       }
     </script>
 
